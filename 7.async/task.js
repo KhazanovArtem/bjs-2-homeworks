@@ -10,7 +10,7 @@ class AlarmClock {
         }
 
         for (let i = 0; i < this.alarmCollection.length; i++) {
-            if (this.alarmCollection[i][0] == time) {
+            if (this.alarmCollection[i][time] == time) {
                 console.warn('Уже присутствует звонок на это же время');
             }
         }
@@ -26,23 +26,27 @@ class AlarmClock {
     }
 
     getCurrentFormattedTime() {
-        const currentTime = new Date();
-        if (currentTime.getHours().toString().length == 1) {
-            let hours = "0" + currentTime.getHours();
-            return (hours + ":" + currentTime.getMinutes());
-        }
+        const currentTime = new Date().toLocaleTimeString("ru-Ru", {
+            hour: "2-digit",
+            minute: "2-digit",
+          });
+        return currentTime;
+        // if (currentTime.getHours().toString().length == 1) {
+        //     let hours = "0" + currentTime.getHours();
+        //     return (hours + ":" + currentTime.getMinutes());
+        // }
 
-        if (currentTime.getMinutes().toString().length == 1) {
-            let minutes = "0" + currentTime.getMinutes();
-            return (currentTime.getHours() + ":" + minutes);
-        }
+        // if (currentTime.getMinutes().toString().length == 1) {
+        //     let minutes = "0" + currentTime.getMinutes();
+        //     return (currentTime.getHours() + ":" + minutes);
+        // }
 
-        if (currentTime.getHours().toString().length == 1 && currentTime.getMinutes().toString().length == 1) {
-            return ("0" + currentTime.getHours() + ":" + "0" + currentTime.getMinutes());
+        // if (currentTime.getHours().toString().length == 1 && currentTime.getMinutes().toString().length == 1) {
+        //     return ("0" + currentTime.getHours() + ":" + "0" + currentTime.getMinutes());
 
-        }
+        // }
 
-        return (currentTime.getHours() + ":" + currentTime.getMinutes());
+        // return (currentTime.getHours() + ":" + currentTime.getMinutes());
     }
 
     start() {
