@@ -31,22 +31,6 @@ class AlarmClock {
             minute: "2-digit",
           });
         return currentTime;
-        // if (currentTime.getHours().toString().length == 1) {
-        //     let hours = "0" + currentTime.getHours();
-        //     return (hours + ":" + currentTime.getMinutes());
-        // }
-
-        // if (currentTime.getMinutes().toString().length == 1) {
-        //     let minutes = "0" + currentTime.getMinutes();
-        //     return (currentTime.getHours() + ":" + minutes);
-        // }
-
-        // if (currentTime.getHours().toString().length == 1 && currentTime.getMinutes().toString().length == 1) {
-        //     return ("0" + currentTime.getHours() + ":" + "0" + currentTime.getMinutes());
-
-        // }
-
-        // return (currentTime.getHours() + ":" + currentTime.getMinutes());
     }
 
     start() {
